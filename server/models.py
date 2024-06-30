@@ -61,7 +61,7 @@ class RestaurantPizza(db.Model, SerializerMixin):
     pizza = db.relationship("Pizza", back_populates = "restaurant_pizzas")
 
     # add serialization rules
-    serialize_rules = ("-restaurant_pizzas.restaurant", "-restaurant_pizzas.pizza")
+    serialize_rules = ("-restaurant.restaurant_pizzas", "-pizza.restaurant_pizzas")
 
     # add validation
 
